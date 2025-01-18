@@ -5893,7 +5893,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_GetAttendanceState:
       description: Response for /api/GetAttendanceState
@@ -5962,7 +5962,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_BattlePassMissionRewardAll:
       description: Response for /api/BattlePassMissionRewardAll
@@ -5985,7 +5985,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_BattlePassReward:
       description: Response for /api/BattlePassReward
@@ -6077,7 +6077,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_PurchaseSpecialPassProduct:
       description: Response for /api/PurchaseSpecialPassProduct
@@ -6100,7 +6100,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_PurchaseSpecialPassProduct_IncludeLimbusPass:
       description: Response for /api/PurchaseSpecialPassProduct_IncludeLimbusPass
@@ -6123,7 +6123,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_PurchaseSpecialPassProduct_NotIncludeLimbusPass:
       description: Response for /api/PurchaseSpecialPassProduct_NotIncludeLimbusPass
@@ -6146,7 +6146,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_PurchaseBattlePassByRealLunacy:
       description: Response for /api/PurchaseBattlePassByRealLunacy
@@ -6169,7 +6169,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_UseCoupon:
       description: Response for /api/UseCoupon
@@ -6468,7 +6468,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_GetStageProgressRateReward:
       description: Response for /api/GetStageProgressRateReward
@@ -6767,7 +6767,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_ReturnSavePointStoryDungeonMap:
       description: Response for /api/ReturnSavePointStoryDungeonMap
@@ -7227,7 +7227,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_iap_InitPurchase:
       description: Response for /iap/InitPurchase
@@ -7273,7 +7273,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_iap_FinalizePurchaseAsSteam:
       description: Response for /iap/FinalizePurchaseAsSteam
@@ -7296,7 +7296,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_iap_UpdateSteamPendingPurchase:
       description: Response for /iap/UpdateSteamPendingPurchase
@@ -7365,7 +7365,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_iap_PurchaseAsApple:
       description: Response for /iap/PurchaseAsApple
@@ -7388,7 +7388,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_iap_PurchaseIngameProduct:
       description: Response for /iap/PurchaseIngameProduct
@@ -7411,7 +7411,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_UseItem:
       description: Response for /api/UseItem
@@ -7457,7 +7457,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_PurchaseEnkephalin:
       description: Response for /api/PurchaseEnkephalin
@@ -7480,7 +7480,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_PersonalityGacksung:
       description: Response for /api/PersonalityGacksung
@@ -7503,7 +7503,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_SetPersonalityGacksungIllust:
       description: Response for /api/SetPersonalityGacksungIllust
@@ -7526,7 +7526,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_EgoGacksung:
       description: Response for /api/EgoGacksung
@@ -7549,7 +7549,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_UsePersonalityExpItem:
       description: Response for /api/UsePersonalityExpItem
@@ -7595,7 +7595,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_PersonalityGacksungWithItems:
       description: Response for /api/PersonalityGacksungWithItems
@@ -7618,7 +7618,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_EgoGacksungWithItems:
       description: Response for /api/EgoGacksungWithItems
@@ -7641,7 +7641,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_LoadUserDataAll:
       description: Response for /api/LoadUserDataAll
@@ -7710,7 +7710,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_login_SignInAsGuest:
       description: Response for /login/SignInAsGuest
@@ -7986,7 +7986,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_login_CheckClientVersion:
       description: Response for /login/CheckClientVersion
@@ -8147,7 +8147,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_log_ReportModifiedHash:
       description: Response for /log/ReportModifiedHash
@@ -8170,7 +8170,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_SaveMiniStoryWeek:
       description: Response for /api/SaveMiniStoryWeek
@@ -8193,7 +8193,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_CompleteMinistory:
       description: Response for /api/CompleteMinistory
@@ -8216,7 +8216,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_EnterMirrorDungeon:
       description: Response for /api/EnterMirrorDungeon
@@ -8492,7 +8492,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_AcquireRewardEgoGiftsMirrorDungeon:
       description: Response for /api/AcquireRewardEgoGiftsMirrorDungeon
@@ -8653,7 +8653,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_SendMirrorDungeonShopExit:
       description: Response for /api/SendMirrorDungeonShopExit
@@ -8676,7 +8676,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_PurchaseHealMirrorDungeon:
       description: Response for /api/PurchaseHealMirrorDungeon
@@ -9113,7 +9113,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_SelectRailwayDungeonBuff:
       description: Response for /api/SelectRailwayDungeonBuff
@@ -9159,7 +9159,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_login_GetTermsOfUseStateAll:
       description: Response for /login/GetTermsOfUseStateAll
@@ -9205,7 +9205,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_GetTheaterInfo:
       description: Response for /api/GetTheaterInfo
@@ -9274,7 +9274,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_UpdateLobbyCg:
       description: Response for /api/UpdateLobbyCg
@@ -9297,7 +9297,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_GetUserBanners:
       description: Response for /api/GetUserBanners
@@ -9458,7 +9458,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_CancelSentFriendRequest:
       description: Response for /api/CancelSentFriendRequest
@@ -9481,7 +9481,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_DeleteFriend:
       description: Response for /api/DeleteFriend
@@ -9504,7 +9504,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_GetFriendSupportPersonalities:
       description: Response for /api/GetFriendSupportPersonalities
@@ -9573,7 +9573,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_GetProfileTicketDecoDatas:
       description: Response for /api/GetProfileTicketDecoDatas
@@ -9665,7 +9665,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_EnterStoryMirrorDungeon:
       description: Response for /api/EnterStoryMirrorDungeon
@@ -9872,7 +9872,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     response_api_AcquireRewardEgoGiftsStoryMirrorDungeon:
       description: Response for /api/AcquireRewardEgoGiftsStoryMirrorDungeon
@@ -10186,7 +10186,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_AcquireHellsChickenReward:
       content:
@@ -10242,7 +10242,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_AcquireAttendanceReward:
       content:
@@ -10284,7 +10284,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_BattlePassReward:
       content:
@@ -10312,7 +10312,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_BattlePassExLevelReward:
       content:
@@ -10326,7 +10326,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_PurchaseBattlePassLevel:
       content:
@@ -10354,7 +10354,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_PurchaseSpecialPassProduct_IncludeLimbusPass:
       content:
@@ -10368,7 +10368,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_PurchaseSpecialPassProduct_NotIncludeLimbusPass:
       content:
@@ -10382,7 +10382,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_PurchaseBattlePassByRealLunacy:
       content:
@@ -10396,7 +10396,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_UseCoupon:
       content:
@@ -10424,7 +10424,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_EnterExpDungeon:
       content:
@@ -10508,7 +10508,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_SkipThreadDungeon:
       content:
@@ -10536,7 +10536,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_AcquireDailyLoginReward:
       content:
@@ -10564,7 +10564,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_SkipTutorial:
       content:
@@ -10578,7 +10578,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_GetStageProgressRateReward:
       content:
@@ -10648,7 +10648,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_EnterStoryDungeon:
       content:
@@ -10774,7 +10774,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_ExitStory:
       content:
@@ -10956,7 +10956,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_UseGachaPityPoint:
       content:
@@ -10984,7 +10984,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_ExitRailwayDungeon:
       content:
@@ -11096,7 +11096,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_iap_GetSteamWalletCurrency:
       content:
@@ -11306,7 +11306,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_CheckSeasonLog:
       content:
@@ -11320,7 +11320,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_ConfirmedSeasonLog:
       content:
@@ -11334,7 +11334,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_login_SignInAsGuest:
       content:
@@ -11488,7 +11488,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_login_CancelSecession:
       content:
@@ -11502,7 +11502,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_login_CheckClientVersion:
       content:
@@ -11516,7 +11516,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_login_GetBanDetails:
       content:
@@ -11530,7 +11530,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_login_UnLinkWithAnother:
       content:
@@ -11558,7 +11558,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_UnsealMails:
       content:
@@ -11586,7 +11586,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_log_ReportSpeedHack:
       content:
@@ -11712,7 +11712,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_SelectThemeFloorMirrorDungeon:
       content:
@@ -11740,7 +11740,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_EnterMirrorDungeonMapNode:
       content:
@@ -11852,7 +11852,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_RejectRewardEgoGiftWithEnemyBufsMirrorDungeon:
       content:
@@ -11866,7 +11866,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_AcquireMirrorDungeonBattleReward:
       content:
@@ -11894,7 +11894,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_SendMirrorDungeonLogError:
       content:
@@ -11922,7 +11922,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_PurchaseHealMirrorDungeon:
       content:
@@ -12146,7 +12146,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_AcquireMirrorDungeonExitReward:
       content:
@@ -12216,7 +12216,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_login_GetTermsOfUseStateAll:
       content:
@@ -12258,7 +12258,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_CompleteTheaterStory:
       content:
@@ -12314,7 +12314,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_GetFriendsData:
       content:
@@ -12328,7 +12328,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_FindFriend:
       content:
@@ -12356,7 +12356,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_SendFriendRequest:
       content:
@@ -12482,7 +12482,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_UpdateProfileTicketDeco:
       content:
@@ -12580,7 +12580,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_EnterStoryMirrorDungeonMapNode:
       content:
@@ -12678,7 +12678,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 0
+                  - -1
                 type: integer
     request_api_PurchaseHealStoryMirrorDungeon:
       content:
