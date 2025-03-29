@@ -1001,6 +1001,13 @@ paths:
       responses:
         '200':
           $ref: '#/components/responses/response_api_AcquireMirrorDungeonExitReward'
+  /api/EnterInfiniteMode:
+    post:
+      requestBody:
+        $ref: '#/components/requestBodies/request_api_EnterInfiniteMode'
+      responses:
+        '200':
+          $ref: '#/components/responses/response_api_EnterInfiniteMode'
   /api/AcquireMissionRewards:
     post:
       requestBody:
@@ -1392,6 +1399,8 @@ components:
           type: integer
         gi:
           type: integer
+        pord:
+          type: integer
     Extrarewardstate:
       type: object
       properties:
@@ -1425,6 +1434,24 @@ components:
           type: array
           items:
             type: integer
+    Buffs1:
+      type: object
+      properties:
+        buffId:
+          type: integer
+        playeregogift:
+          type: integer
+        enemyegogift:
+          type: integer
+    Buffsetsbyegogift:
+      type: object
+      properties:
+        nid:
+          type: integer
+        buffs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Buffs1'
     RailwaySaveInfo:
       type: object
       properties:
@@ -1462,6 +1489,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Buffsets'
+        buffsetsbyegogift:
+          type: array
+          items:
+            $ref: '#/components/schemas/Buffsetsbyegogift'
         initseed:
           type: integer
         currentseed:
@@ -2169,6 +2200,8 @@ components:
           type: integer
         gi:
           type: integer
+        pord:
+          type: integer
     Statistics1:
       type: object
       properties:
@@ -2302,6 +2335,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Buffsets'
+        buffsetsbyegogift:
+          type: array
+          items:
+            $ref: '#/components/schemas/Buffsetsbyegogift'
         date:
           type: string
         deadunitnumber:
@@ -2398,6 +2435,8 @@ components:
           type: integer
         value2:
           type: integer
+        value3:
+          type: integer
         idx:
           type: integer
     Profile:
@@ -2441,6 +2480,8 @@ components:
         value:
           type: integer
         value2:
+          type: integer
+        value3:
           type: integer
     RightBorders:
       type: object
@@ -3277,6 +3318,8 @@ components:
             $ref: '#/components/schemas/MissionConditionContexts'
         usedDanteAbilityCount:
           type: integer
+        clearStatus:
+          type: integer
     ResponseResultApiExitStageBattle:
       type: object
       properties:
@@ -3670,6 +3713,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/AbnormalityLogs'
+        personalities:
+          type: array
+          items:
+            $ref: '#/components/schemas/Personalities'
     ResponseResultApiEnterRailwayDungeonNode:
       type: object
       properties:
@@ -3697,6 +3744,10 @@ components:
           type: integer
         currentNodeId:
           type: integer
+        buffsetsbyegogift:
+          type: array
+          items:
+            $ref: '#/components/schemas/Buffsetsbyegogift'
     RequestParamApiGetRailwayDungeonNodeAndLogAll:
       type: object
       properties:
@@ -3778,6 +3829,8 @@ components:
           type: boolean
         enemy:
           $ref: '#/components/schemas/PrevEnemyData'
+        buffsetbyegogift:
+          $ref: '#/components/schemas/Buffsetsbyegogift'
     ResponseResultApiExitRailwayDungeonNode:
       type: object
       properties:
@@ -3959,7 +4012,7 @@ components:
     ResponseResultIapUpdateSteamPendingPurchase:
       type: object
       properties:
-        finalizedTransactionIds:
+        finalizedProductIds:
           type: array
           items:
             type: string
@@ -4592,6 +4645,10 @@ components:
           type: integer
         battleStatus:
           type: integer
+        missionConditionContexts:
+          type: array
+          items:
+            $ref: '#/components/schemas/MissionConditionContexts'
         isOrigin:
           type: integer
     ResponseResultApiExitMirrorDungeonMapNode:
@@ -5019,6 +5076,16 @@ components:
           $ref: '#/components/schemas/MirrorDungeonHistories'
         startBuffInfo:
           $ref: '#/components/schemas/StartBuffInfo'
+    RequestParamApiEnterInfiniteMode:
+      type: object
+      properties:
+        dungeonId:
+          type: integer
+    ResponseResultApiEnterInfiniteMode:
+      type: object
+      properties:
+        saveInfo:
+          $ref: '#/components/schemas/MirrorOriginSaveInfo'
     RequestParamApiAcquireMissionRewards:
       type: object
       properties:
@@ -5824,7 +5891,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 5719946
+                  - 72692
                 type: integer
     response_api_AcquireHellsChickenReward:
       description: Response for /api/AcquireHellsChickenReward
@@ -5847,7 +5914,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 230314
+                  - 23377225
                 type: integer
     response_api_AcquireRailwayDungeonReward:
       description: Response for /api/AcquireRailwayDungeonReward
@@ -5870,7 +5937,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 67
+                  - 6148
                 type: integer
     response_api_ChangeCurrentAnnouncer:
       description: Response for /api/ChangeCurrentAnnouncer
@@ -5916,7 +5983,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 81
+                  - 685556
                 type: integer
     response_api_AcquireAttendanceReward:
       description: Response for /api/AcquireAttendanceReward
@@ -5939,7 +6006,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 6298
+                  - 103823
                 type: integer
     response_api_BattlePassMissionReward:
       description: Response for /api/BattlePassMissionReward
@@ -6008,7 +6075,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - 13360
                 type: integer
     response_api_BattlePassReward_ALL:
       description: Response for /api/BattlePassReward_ALL
@@ -6031,7 +6098,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - 13360
                 type: integer
     response_api_BattlePassExLevelReward:
       description: Response for /api/BattlePassExLevelReward
@@ -6054,7 +6121,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 35937
+                  - 11454528
                 type: integer
     response_api_PurchaseBattlePassLevel:
       description: Response for /api/PurchaseBattlePassLevel
@@ -6192,7 +6259,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 747377296875
+                  - 745170
                 type: integer
     response_api_GetUserCouponState:
       description: Response for /api/GetUserCouponState
@@ -6215,7 +6282,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 2798
+                  - 2181
                 type: integer
     response_api_EnterExpDungeon:
       description: Response for /api/EnterExpDungeon
@@ -6238,7 +6305,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 207402
+                  - 212
                 type: integer
     response_api_ExitExpDungeon:
       description: Response for /api/ExitExpDungeon
@@ -6261,7 +6328,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 891135
+                  - 342955
                 type: integer
     response_api_SkipExpDungeon:
       description: Response for /api/SkipExpDungeon
@@ -6284,7 +6351,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 1323
+                  - 1225
                 type: integer
     response_api_EnterThreadDungeon:
       description: Response for /api/EnterThreadDungeon
@@ -6307,7 +6374,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 63
+                  - 576
                 type: integer
     response_api_ExitThreadDungeon:
       description: Response for /api/ExitThreadDungeon
@@ -6330,7 +6397,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 1508
+                  - 5601816552
                 type: integer
     response_api_GetDailyDungeonInfo:
       description: Response for /api/GetDailyDungeonInfo
@@ -6353,7 +6420,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 4867
+                  - 4654
                 type: integer
     response_api_SkipThreadDungeon:
       description: Response for /api/SkipThreadDungeon
@@ -6376,7 +6443,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 16711644
+                  - 593
                 type: integer
     response_api_GetDailyLoginState:
       description: Response for /api/GetDailyLoginState
@@ -6399,7 +6466,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 4077
+                  - 3721
                 type: integer
     response_api_AcquireDailyLoginReward:
       description: Response for /api/AcquireDailyLoginReward
@@ -6422,7 +6489,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - 5873
                 type: integer
     response_api_GetDanteNoteState:
       description: Response for /api/GetDanteNoteState
@@ -6445,7 +6512,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 84
+                  - 417
                 type: integer
     response_api_SkipTutorial:
       description: Response for /api/SkipTutorial
@@ -6491,7 +6558,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 24
+                  - 103
                 type: integer
     response_api_EnterStageBattle:
       description: Response for /api/EnterStageBattle
@@ -6514,7 +6581,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 1415
+                  - 85143
                 type: integer
     response_api_ExitStageBattle:
       description: Response for /api/ExitStageBattle
@@ -6537,7 +6604,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 1327
+                  - 630
                 type: integer
     response_api_GetDungeonSaveInfoAll:
       description: Response for /api/GetDungeonSaveInfoAll
@@ -6560,7 +6627,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 2551
+                  - 584
                 type: integer
     response_api_GetStoryDungeonSaveInfo:
       description: Response for /api/GetStoryDungeonSaveInfo
@@ -6583,7 +6650,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 81746504
+                  - 1020
                 type: integer
     response_api_EnterStoryDungeon:
       description: Response for /api/EnterStoryDungeon
@@ -6606,7 +6673,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 2586
+                  - 505160
                 type: integer
     response_api_ReEnterStoryDungeon:
       description: Response for /api/ReEnterStoryDungeon
@@ -6629,7 +6696,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 16036966
+                  - 12567025
                 type: integer
     response_api_ExitStoryDungeon:
       description: Response for /api/ExitStoryDungeon
@@ -6652,7 +6719,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - 1000
                 type: integer
     response_api_EnterStoryDungeonMapNode:
       description: Response for /api/EnterStoryDungeonMapNode
@@ -6675,7 +6742,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 3015
+                  - 792
                 type: integer
     response_api_UpdateStoryDungeonMapNode:
       description: Response for /api/UpdateStoryDungeonMapNode
@@ -6698,7 +6765,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 3695
+                  - 97336
                 type: integer
     response_api_EnterStoryDungeonMapNodeBattleAfterChoice:
       description: Response for /api/EnterStoryDungeonMapNodeBattleAfterChoice
@@ -6721,7 +6788,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 1225
+                  - 1237
                 type: integer
     response_api_ExitStoryDungeonMapNode:
       description: Response for /api/ExitStoryDungeonMapNode
@@ -6744,7 +6811,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 1848
+                  - 981
                 type: integer
     response_api_UpdateStoryDungeonUnits:
       description: Response for /api/UpdateStoryDungeonUnits
@@ -6790,7 +6857,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 4327
+                  - 2301
                 type: integer
     response_api_ExitStory:
       description: Response for /api/ExitStory
@@ -6813,7 +6880,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 5196312
+                  - 2794
                 type: integer
     response_api_GetAbnormalityLogData:
       description: Response for /api/GetAbnormalityLogData
@@ -6836,7 +6903,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 6484
+                  - 36071163
                 type: integer
     response_api_UpdateAbnormalityLogData:
       description: Response for /api/UpdateAbnormalityLogData
@@ -6859,7 +6926,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 7616
+                  - 9486
                 type: integer
     response_api_GetStoryDungeonNodeRecord:
       description: Response for /api/GetStoryDungeonNodeRecord
@@ -6882,7 +6949,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 1932
+                  - 2814
                 type: integer
     response_api_EnterRailwayDungeon:
       description: Response for /api/EnterRailwayDungeon
@@ -6905,7 +6972,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 256
+                  - 1
                 type: integer
     response_api_EnterRailwayDungeonNode:
       description: Response for /api/EnterRailwayDungeonNode
@@ -6928,7 +6995,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 1672028
+                  - 766
                 type: integer
     response_api_GetRailwayDungeonNodeAndLogAll:
       description: Response for /api/GetRailwayDungeonNodeAndLogAll
@@ -6951,7 +7018,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 4188
+                  - 261
                 type: integer
     response_api_ClaimEventReward:
       description: Response for /api/ClaimEventReward
@@ -6974,7 +7041,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 872
+                  - 524
                 type: integer
     response_api_ClaimEventReward_ALL:
       description: Response for /api/ClaimEventReward_ALL
@@ -6997,7 +7064,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 1033
+                  - 127776
                 type: integer
     response_api_ExitRailwayDungeonNode:
       description: Response for /api/ExitRailwayDungeonNode
@@ -7020,7 +7087,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 26069
+                  - 44129506
                 type: integer
     response_api_ExitRailwayDungeonRestNode:
       description: Response for /api/ExitRailwayDungeonRestNode
@@ -7043,7 +7110,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 1397
+                  - 37
                 type: integer
     response_api_PlayGacha:
       description: Response for /api/PlayGacha
@@ -7066,7 +7133,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 571787
+                  - 20340100
                 type: integer
     response_log_GetGachaLogAll:
       description: Response for /log/GetGachaLogAll
@@ -7089,7 +7156,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - 216029
                 type: integer
     response_api_UseGachaPityPoint:
       description: Response for /api/UseGachaPityPoint
@@ -7112,7 +7179,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 767
+                  - 34
                 type: integer
     response_api_ClaimClosedGachaRewards:
       description: Response for /api/ClaimClosedGachaRewards
@@ -7135,7 +7202,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - 1107
                 type: integer
     response_api_ExitRailwayDungeon:
       description: Response for /api/ExitRailwayDungeon
@@ -7158,7 +7225,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 4321
+                  - 78
                 type: integer
     response_api_GiveUpRailwayDungeonNode:
       description: Response for /api/GiveUpRailwayDungeonNode
@@ -7181,7 +7248,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 740080
+                  - 226
                 type: integer
     response_api_GiveUpRailwayDungeonNodeInBattle:
       description: Response for /api/GiveUpRailwayDungeonNodeInBattle
@@ -7204,7 +7271,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 1846
+                  - 4725
                 type: integer
     response_iap_Purchase:
       description: Response for /iap/Purchase
@@ -7250,7 +7317,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 1501
+                  - 2840
                 type: integer
     response_iap_InitPurchaseAsSteam:
       description: Response for /iap/InitPurchaseAsSteam
@@ -7319,7 +7386,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 177
+                  - 73644
                 type: integer
     response_iap_GetSteamWalletCurrency:
       description: Response for /iap/GetSteamWalletCurrency
@@ -7342,7 +7409,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 4874
+                  - 24964
                 type: integer
     response_iap_PurchaseAsGoogle:
       description: Response for /iap/PurchaseAsGoogle
@@ -7434,7 +7501,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 7762392000
+                  - 3855
                 type: integer
     response_api_PurchaseEnkephalinModule:
       description: Response for /api/PurchaseEnkephalinModule
@@ -7572,7 +7639,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 878
+                  - 24707
                 type: integer
     response_api_UseEgoGacksungItem:
       description: Response for /api/UseEgoGacksungItem
@@ -7664,7 +7731,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 5892
+                  - 664
                 type: integer
     response_api_CheckSeasonLog:
       description: Response for /api/CheckSeasonLog
@@ -7687,7 +7754,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 59314125
+                  - 952
                 type: integer
     response_api_ConfirmedSeasonLog:
       description: Response for /api/ConfirmedSeasonLog
@@ -7733,7 +7800,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 3000
+                  - 583
                 type: integer
     response_login_SignInAsNewGuest:
       description: Response for /login/SignInAsNewGuest
@@ -7756,7 +7823,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - 21906
                 type: integer
     response_login_SignInAsGoogle:
       description: Response for /login/SignInAsGoogle
@@ -7779,7 +7846,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 980
+                  - 456
                 type: integer
     response_login_LinkWithGoogle:
       description: Response for /login/LinkWithGoogle
@@ -7802,7 +7869,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 4800
+                  - 124
                 type: integer
     response_login_SignInAsApple:
       description: Response for /login/SignInAsApple
@@ -7825,7 +7892,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 58301
+                  - 2
                 type: integer
     response_login_LinkWithApple:
       description: Response for /login/LinkWithApple
@@ -7848,7 +7915,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 9735176
+                  - 1323
                 type: integer
     response_login_SignInAsSteam:
       description: Response for /login/SignInAsSteam
@@ -7871,7 +7938,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 234
+                  - 5645313
                 type: integer
     response_login_RefreshLinkAuth:
       description: Response for /login/RefreshLinkAuth
@@ -7894,7 +7961,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 35935
+                  - 355
                 type: integer
     response_login_GetInfoOfLinkWith:
       description: Response for /login/GetInfoOfLinkWith
@@ -7917,7 +7984,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 653972001
+                  - 8701
                 type: integer
     response_login_LinkWithAnother:
       description: Response for /login/LinkWithAnother
@@ -7940,7 +8007,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 63235067830
+                  - 293764
                 type: integer
     response_login_TryToSecede:
       description: Response for /login/TryToSecede
@@ -7963,7 +8030,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 6794
+                  - 975
                 type: integer
     response_login_CancelSecession:
       description: Response for /login/CancelSecession
@@ -8009,7 +8076,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 499849
+                  - 8625
                 type: integer
     response_login_GetBanDetails:
       description: Response for /login/GetBanDetails
@@ -8032,7 +8099,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - 34386496
                 type: integer
     response_login_UnLinkWithAnother:
       description: Response for /login/UnLinkWithAnother
@@ -8055,7 +8122,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 7976023992
+                  - 3689
                 type: integer
     response_api_RefreshMailbox:
       description: Response for /api/RefreshMailbox
@@ -8078,7 +8145,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 1326
+                  - 37041
                 type: integer
     response_api_UnsealMails:
       description: Response for /api/UnsealMails
@@ -8101,7 +8168,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - 17230
                 type: integer
     response_log_GetMailLogAll:
       description: Response for /log/GetMailLogAll
@@ -8124,7 +8191,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - 205282
                 type: integer
     response_log_ReportSpeedHack:
       description: Response for /log/ReportSpeedHack
@@ -8239,7 +8306,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 6401
+                  - 2380
                 type: integer
     response_api_ReEnterMirrorDungeon:
       description: Response for /api/ReEnterMirrorDungeon
@@ -8262,7 +8329,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 1896129
+                  - 571712
                 type: integer
     response_api_UpdateMirrorDungeon:
       description: Response for /api/UpdateMirrorDungeon
@@ -8285,7 +8352,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 184
+                  - 310
                 type: integer
     response_api_SelectFormationMirrorDungeon:
       description: Response for /api/SelectFormationMirrorDungeon
@@ -8308,7 +8375,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 3728
+                  - 2223
                 type: integer
     response_api_RecreateThemeFloorPoolMirrorDungeon:
       description: Response for /api/RecreateThemeFloorPoolMirrorDungeon
@@ -8331,7 +8398,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 4292468
+                  - 44100
                 type: integer
     response_api_SelectThemeFloorMirrorDungeon:
       description: Response for /api/SelectThemeFloorMirrorDungeon
@@ -8354,7 +8421,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 15978612
+                  - 216040
                 type: integer
     response_api_ExitMirrorDungeon:
       description: Response for /api/ExitMirrorDungeon
@@ -8377,7 +8444,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 624
+                  - 86459
                 type: integer
     response_api_EnterMirrorDungeonMapNode:
       description: Response for /api/EnterMirrorDungeonMapNode
@@ -8400,7 +8467,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 321651
+                  - 17179728
                 type: integer
     response_api_UpdateMirrorDungeonMapNode:
       description: Response for /api/UpdateMirrorDungeonMapNode
@@ -8423,7 +8490,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - 241
                 type: integer
     response_api_EnterMirrordungeonMapNodeBattleAfterChoice:
       description: Response for /api/EnterMirrordungeonMapNodeBattleAfterChoice
@@ -8446,7 +8513,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - 4592
                 type: integer
     response_api_ExitMirrorDungeonMapNode:
       description: Response for /api/ExitMirrorDungeonMapNode
@@ -8469,7 +8536,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 14440000
+                  - 6030
                 type: integer
     response_api_UpdateMirrorDungeonUnits:
       description: Response for /api/UpdateMirrorDungeonUnits
@@ -8515,7 +8582,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 9744
+                  - 814919
                 type: integer
     response_api_AcquireRewardEgoGiftsWithEnemyBufMirrorDungeon:
       description: Response for /api/AcquireRewardEgoGiftsWithEnemyBufMirrorDungeon
@@ -8538,7 +8605,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 599
+                  - 5715
                 type: integer
     response_api_RejectRewardEgoGiftsMirrorDungeon:
       description: Response for /api/RejectRewardEgoGiftsMirrorDungeon
@@ -8561,7 +8628,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 1995
+                  - 392109
                 type: integer
     response_api_RejectRewardEgoGiftWithEnemyBufsMirrorDungeon:
       description: Response for /api/RejectRewardEgoGiftWithEnemyBufsMirrorDungeon
@@ -8584,7 +8651,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 1281
+                  - 3192
                 type: integer
     response_api_AcquireMirrorDungeonBattleReward:
       description: Response for /api/AcquireMirrorDungeonBattleReward
@@ -8607,7 +8674,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 5780
+                  - 8310
                 type: integer
     response_api_GetMirrorDungeonEgoGiftRecord:
       description: Response for /api/GetMirrorDungeonEgoGiftRecord
@@ -8630,7 +8697,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - 854670349
                 type: integer
     response_api_SendMirrorDungeonLogError:
       description: Response for /api/SendMirrorDungeonLogError
@@ -8699,7 +8766,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - 5146965
                 type: integer
     response_api_PurchaseFormationMirrorDungeon:
       description: Response for /api/PurchaseFormationMirrorDungeon
@@ -8722,7 +8789,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 2067798879
+                  - 703
                 type: integer
     response_api_PurchaseUpgradePersonalityMirrorDungeon:
       description: Response for /api/PurchaseUpgradePersonalityMirrorDungeon
@@ -8745,7 +8812,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 2886
+                  - 4489
                 type: integer
     response_api_PurchaseEgoGiftMirrorDungeon:
       description: Response for /api/PurchaseEgoGiftMirrorDungeon
@@ -8768,7 +8835,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 61
+                  - 130075
                 type: integer
     response_api_SellEgoGiftMirrorDungeon:
       description: Response for /api/SellEgoGiftMirrorDungeon
@@ -8791,7 +8858,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 102240627776
+                  - 2571353
                 type: integer
     response_api_RefreshShopEgoGiftsMirrorDungeon:
       description: Response for /api/RefreshShopEgoGiftsMirrorDungeon
@@ -8814,7 +8881,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 8805624625
+                  - 285
                 type: integer
     response_api_GetStartBuffFInfoMirrorDungeon:
       description: Response for /api/GetStartBuffFInfoMirrorDungeon
@@ -8837,7 +8904,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 10734
+                  - 5996127
                 type: integer
     response_api_PurchaseStartBuffMirrorDungeon:
       description: Response for /api/PurchaseStartBuffMirrorDungeon
@@ -8860,7 +8927,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 1319
+                  - 6643
                 type: integer
     response_api_EnableSpecialStartBuffMirrorDungeon:
       description: Response for /api/EnableSpecialStartBuffMirrorDungeon
@@ -8883,7 +8950,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 2016400
+                  - 135
                 type: integer
     response_api_EnableStartBuffMirrorDungeon:
       description: Response for /api/EnableStartBuffMirrorDungeon
@@ -8906,7 +8973,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 2730
+                  - 2951524
                 type: integer
     response_api_RemoveMirrorDungeonEgoGift:
       description: Response for /api/RemoveMirrorDungeonEgoGift
@@ -8929,7 +8996,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 25569824
+                  - 1468
                 type: integer
     response_api_AcquireStartEgoGiftsAndCreateThemePoolMirrorDungeon:
       description: Response for /api/AcquireStartEgoGiftsAndCreateThemePoolMirrorDungeon
@@ -8952,7 +9019,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 631628712
+                  - 173
                 type: integer
     response_api_RefreshStartEgoGiftsMirrorDungeon:
       description: Response for /api/RefreshStartEgoGiftsMirrorDungeon
@@ -8975,7 +9042,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 1249
+                  - 2280
                 type: integer
     response_api_UpgradeEgoGiftMirrorDungeon:
       description: Response for /api/UpgradeEgoGiftMirrorDungeon
@@ -8998,7 +9065,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - 2331474054
                 type: integer
     response_api_CombineEgoGiftMirrorDungeon:
       description: Response for /api/CombineEgoGiftMirrorDungeon
@@ -9021,7 +9088,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 856
+                  - 698
                 type: integer
     response_api_PreviewMirrorDungeonExitReward:
       description: Response for /api/PreviewMirrorDungeonExitReward
@@ -9044,7 +9111,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - 149
                 type: integer
     response_api_AcquireMirrorDungeonExitReward:
       description: Response for /api/AcquireMirrorDungeonExitReward
@@ -9067,7 +9134,30 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 1449
+                  - 2838
+                type: integer
+    response_api_EnterInfiniteMode:
+      description: Response for /api/EnterInfiniteMode
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              serverInfo:
+                $ref: '#/components/schemas/ServerInfo'
+              state:
+                enum:
+                  - ok
+                type: string
+              updated:
+                $ref: '#/components/schemas/UpdatedFormat'
+              result:
+                $ref: '#/components/schemas/ResponseResultApiEnterInfiniteMode'
+              synchronized:
+                $ref: '#/components/schemas/Synchronized'
+              packetId:
+                enum:
+                  - 4559
                 type: integer
     response_api_AcquireMissionRewards:
       description: Response for /api/AcquireMissionRewards
@@ -9090,7 +9180,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 2614779
+                  - 402
                 type: integer
     response_api_ReportError:
       description: Response for /api/ReportError
@@ -9136,7 +9226,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 3655
+                  - 6889
                 type: integer
     response_api_FetchLatestSynchronousData:
       description: Response for /api/FetchLatestSynchronousData
@@ -9182,7 +9272,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 2044
+                  - 7577
                 type: integer
     response_login_UpdateTermsOfUseState:
       description: Response for /login/UpdateTermsOfUseState
@@ -9228,7 +9318,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 7921
+                  - 50650
                 type: integer
     response_api_CompleteTheaterStory:
       description: Response for /api/CompleteTheaterStory
@@ -9251,7 +9341,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 8091
+                  - 2364
                 type: integer
     response_api_UpdateFormation:
       description: Response for /api/UpdateFormation
@@ -9320,7 +9410,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 127072
+                  - 1701
                 type: integer
     response_api_GetFriendsData:
       description: Response for /api/GetFriendsData
@@ -9343,7 +9433,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 19612
+                  - 543
                 type: integer
     response_api_FindFriend:
       description: Response for /api/FindFriend
@@ -9366,7 +9456,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 4780
+                  - 7930
                 type: integer
     response_api_GetRecommendFriends:
       description: Response for /api/GetRecommendFriends
@@ -9389,7 +9479,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 4099
+                  - 376996
                 type: integer
     response_api_SendFriendRequest:
       description: Response for /api/SendFriendRequest
@@ -9412,7 +9502,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 7237
+                  - 102
                 type: integer
     response_api_AcceptReceivedFriendRequest:
       description: Response for /api/AcceptReceivedFriendRequest
@@ -9435,7 +9525,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 1173308
+                  - 1159
                 type: integer
     response_api_RejectReceivedFriendRequest:
       description: Response for /api/RejectReceivedFriendRequest
@@ -9527,7 +9617,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 297
+                  - 7204
                 type: integer
     response_api_GetFriendSupportPersonalitiesByCharacterId:
       description: Response for /api/GetFriendSupportPersonalitiesByCharacterId
@@ -9550,7 +9640,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 63447230
+                  - 1146068
                 type: integer
     response_api_UpdateUserProfile:
       description: Response for /api/UpdateUserProfile
@@ -9596,7 +9686,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 317
+                  - 88
                 type: integer
     response_api_UpdateProfileTicketDeco:
       description: Response for /api/UpdateProfileTicketDeco
@@ -9619,7 +9709,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 1107310
+                  - 2744
                 type: integer
     response_api_PlayVendingMachine:
       description: Response for /api/PlayVendingMachine
@@ -9642,7 +9732,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 1213
+                  - 24389
                 type: integer
     response_api_ExchangeTwine:
       description: Response for /api/ExchangeTwine
@@ -9688,7 +9778,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 2650319
+                  - 1859
                 type: integer
     response_api_ReEnterStoryMirrorDungeon:
       description: Response for /api/ReEnterStoryMirrorDungeon
@@ -9711,7 +9801,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 2
+                  - 1124766
                 type: integer
     response_api_UpdateStoryMirrorDungeon:
       description: Response for /api/UpdateStoryMirrorDungeon
@@ -9734,7 +9824,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - 56
                 type: integer
     response_api_ExitStoryMirrorDungeon:
       description: Response for /api/ExitStoryMirrorDungeon
@@ -9757,7 +9847,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 0
+                  - 600823
                 type: integer
     response_api_EnterStoryMirrorDungeonMapNode:
       description: Response for /api/EnterStoryMirrorDungeonMapNode
@@ -9780,7 +9870,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 11236
+                  - 2365
                 type: integer
     response_api_UpdateStoryMirrorDungeonMapNode:
       description: Response for /api/UpdateStoryMirrorDungeonMapNode
@@ -9803,7 +9893,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 16922
+                  - 2630
                 type: integer
     response_api_EnterStoryMirrorDungeonMapNodeBattleAfterChoice:
       description: Response for /api/EnterStoryMirrorDungeonMapNodeBattleAfterChoice
@@ -9826,7 +9916,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 778688000
+                  - 57
                 type: integer
     response_api_ExitStoryMirrorDungeonMapNode:
       description: Response for /api/ExitStoryMirrorDungeonMapNode
@@ -9849,7 +9939,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 3360
+                  - 14400
                 type: integer
     response_api_UpdateStoryMirrorDungeonUnits:
       description: Response for /api/UpdateStoryMirrorDungeonUnits
@@ -9895,7 +9985,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 143
+                  - 1575
                 type: integer
     response_api_RejectRewardEgoGiftsStoryMirrorDungeon:
       description: Response for /api/RejectRewardEgoGiftsStoryMirrorDungeon
@@ -9918,7 +10008,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 430
+                  - 9676
                 type: integer
     response_api_PurchaseHealStoryMirrorDungeon:
       description: Response for /api/PurchaseHealStoryMirrorDungeon
@@ -9941,7 +10031,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 8305
+                  - 5250
                 type: integer
     response_api_PurchaseFormationStoryMirrorDungeon:
       description: Response for /api/PurchaseFormationStoryMirrorDungeon
@@ -9964,7 +10054,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 1545
+                  - 478927
                 type: integer
     response_api_PurchaseUpgradePersonalityStoryMirrorDungeon:
       description: Response for /api/PurchaseUpgradePersonalityStoryMirrorDungeon
@@ -9987,7 +10077,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 665
+                  - 6390875
                 type: integer
     response_api_PurchaseEgoGiftStoryMirrorDungeon:
       description: Response for /api/PurchaseEgoGiftStoryMirrorDungeon
@@ -10010,7 +10100,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 13689
+                  - 414
                 type: integer
     response_api_SellEgoGiftStoryMirrorDungeon:
       description: Response for /api/SellEgoGiftStoryMirrorDungeon
@@ -10033,7 +10123,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 8414975304
+                  - 63521199
                 type: integer
     response_api_AcquireStartEgoGiftsStoryMirrorDungeon:
       description: Response for /api/AcquireStartEgoGiftsStoryMirrorDungeon
@@ -10056,7 +10146,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 146689
+                  - 39
                 type: integer
     response_api_UpgradeEgoGiftStoryMirrorDungeon:
       description: Response for /api/UpgradeEgoGiftStoryMirrorDungeon
@@ -10079,7 +10169,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 2649
+                  - 6075
                 type: integer
     response_api_CombineEgoGiftStoryMirrorDungeon:
       description: Response for /api/CombineEgoGiftStoryMirrorDungeon
@@ -10102,7 +10192,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 41756528
+                  - 32
                 type: integer
     response_api_RefreshStartEgoGiftsStoryMirrorDungeon:
       description: Response for /api/RefreshStartEgoGiftsStoryMirrorDungeon
@@ -10125,7 +10215,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 795
+                  - 43614208
                 type: integer
     response_api_RefreshShopEgoGiftsStoryMirrorDungeon:
       description: Response for /api/RefreshShopEgoGiftsStoryMirrorDungeon
@@ -10148,7 +10238,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 18496
+                  - 28729600
                 type: integer
     response_api_RemoveStoryMirrorDungeonEgoGift:
       description: Response for /api/RemoveStoryMirrorDungeonEgoGift
@@ -10171,7 +10261,7 @@ components:
                 $ref: '#/components/schemas/Synchronized'
               packetId:
                 enum:
-                  - 666711392256
+                  - 628
                 type: integer
   requestBodies:
     request_api_GetHellsChickenState:
@@ -10200,7 +10290,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiAcquireHellsChickenReward'
               packetId:
                 enum:
-                  - 114
+                  - 118
                 type: integer
     request_api_AcquireRailwayDungeonReward:
       content:
@@ -10214,7 +10304,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiAcquireRailwayDungeonReward'
               packetId:
                 enum:
-                  - 1224
+                  - 46
                 type: integer
     request_api_ChangeCurrentAnnouncer:
       content:
@@ -10228,7 +10318,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiChangeCurrentAnnouncer'
               packetId:
                 enum:
-                  - 110502144
+                  - 4706
                 type: integer
     request_api_GetAttendanceState:
       content:
@@ -10256,7 +10346,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiAcquireAttendanceReward'
               packetId:
                 enum:
-                  - 0
+                  - 8259
                 type: integer
     request_api_BattlePassMissionReward:
       content:
@@ -10270,7 +10360,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiBattlePassMissionReward'
               packetId:
                 enum:
-                  - 103
+                  - 10767
                 type: integer
     request_api_BattlePassMissionRewardAll:
       content:
@@ -10298,7 +10388,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiBattlePassReward'
               packetId:
                 enum:
-                  - 5574
+                  - 80062991
                 type: integer
     request_api_BattlePassReward_ALL:
       content:
@@ -10340,7 +10430,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiPurchaseBattlePassLevel'
               packetId:
                 enum:
-                  - 3600
+                  - 1750
                 type: integer
     request_api_PurchaseSpecialPassProduct:
       content:
@@ -10410,7 +10500,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiUseCoupon'
               packetId:
                 enum:
-                  - 2111209
+                  - 77
                 type: integer
     request_api_GetUserCouponState:
       content:
@@ -10438,7 +10528,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiEnterExpDungeon'
               packetId:
                 enum:
-                  - 104
+                  - 6237
                 type: integer
     request_api_ExitExpDungeon:
       content:
@@ -10452,7 +10542,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiExitExpDungeon'
               packetId:
                 enum:
-                  - 3634
+                  - 816340
                 type: integer
     request_api_SkipExpDungeon:
       content:
@@ -10466,7 +10556,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiSkipExpDungeon'
               packetId:
                 enum:
-                  - 24577728
+                  - 2048
                 type: integer
     request_api_EnterThreadDungeon:
       content:
@@ -10480,7 +10570,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiEnterThreadDungeon'
               packetId:
                 enum:
-                  - 95006081547
+                  - 3692
                 type: integer
     request_api_ExitThreadDungeon:
       content:
@@ -10494,7 +10584,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiExitThreadDungeon'
               packetId:
                 enum:
-                  - 1474
+                  - 137148604893
                 type: integer
     request_api_GetDailyDungeonInfo:
       content:
@@ -10522,7 +10612,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiSkipThreadDungeon'
               packetId:
                 enum:
-                  - 60
+                  - 2227
                 type: integer
     request_api_GetDailyLoginState:
       content:
@@ -10550,7 +10640,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiAcquireDailyLoginReward'
               packetId:
                 enum:
-                  - 10000
+                  - 92
                 type: integer
     request_api_GetDanteNoteState:
       content:
@@ -10592,7 +10682,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiGetStageProgressRateReward'
               packetId:
                 enum:
-                  - 834897
+                  - 243
                 type: integer
     request_api_EnterStageBattle:
       content:
@@ -10606,7 +10696,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiEnterStageBattle'
               packetId:
                 enum:
-                  - 531505
+                  - 3936
                 type: integer
     request_api_ExitStageBattle:
       content:
@@ -10620,7 +10710,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiExitStageBattle'
               packetId:
                 enum:
-                  - 30
+                  - 38457042
                 type: integer
     request_api_GetDungeonSaveInfoAll:
       content:
@@ -10634,7 +10724,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiGetDungeonSaveInfoAll'
               packetId:
                 enum:
-                  - 2279
+                  - 86
                 type: integer
     request_api_GetStoryDungeonSaveInfo:
       content:
@@ -10662,7 +10752,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiEnterStoryDungeon'
               packetId:
                 enum:
-                  - 36443
+                  - 5368
                 type: integer
     request_api_ReEnterStoryDungeon:
       content:
@@ -10676,7 +10766,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiReEnterStoryDungeon'
               packetId:
                 enum:
-                  - 970299
+                  - 1718
                 type: integer
     request_api_ExitStoryDungeon:
       content:
@@ -10690,7 +10780,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiExitStoryDungeon'
               packetId:
                 enum:
-                  - 7323
+                  - 1225312
                 type: integer
     request_api_EnterStoryDungeonMapNode:
       content:
@@ -10704,7 +10794,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiEnterStoryDungeonMapNode'
               packetId:
                 enum:
-                  - 366
+                  - 36171408
                 type: integer
     request_api_UpdateStoryDungeonMapNode:
       content:
@@ -10718,7 +10808,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiUpdateStoryDungeonMapNode'
               packetId:
                 enum:
-                  - 81796
+                  - 1848
                 type: integer
     request_api_EnterStoryDungeonMapNodeBattleAfterChoice:
       content:
@@ -10732,7 +10822,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiEnterStoryDungeonMapNodeBattleAfterChoice'
               packetId:
                 enum:
-                  - 1511
+                  - 7
                 type: integer
     request_api_ExitStoryDungeonMapNode:
       content:
@@ -10746,7 +10836,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiExitStoryDungeonMapNode'
               packetId:
                 enum:
-                  - 2214
+                  - 2407
                 type: integer
     request_api_UpdateStoryDungeonUnits:
       content:
@@ -10760,7 +10850,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiUpdateStoryDungeonUnits'
               packetId:
                 enum:
-                  - 13511184
+                  - 501
                 type: integer
     request_api_ReturnSavePointStoryDungeonMap:
       content:
@@ -10788,7 +10878,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiExitStory'
               packetId:
                 enum:
-                  - 495627
+                  - 130787078976
                 type: integer
     request_api_GetAbnormalityLogData:
       content:
@@ -10802,7 +10892,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiGetAbnormalityLogData'
               packetId:
                 enum:
-                  - 6084
+                  - 69
                 type: integer
     request_api_UpdateAbnormalityLogData:
       content:
@@ -10816,7 +10906,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiUpdateAbnormalityLogData'
               packetId:
                 enum:
-                  - 1726563
+                  - 7881
                 type: integer
     request_api_GetStoryDungeonNodeRecord:
       content:
@@ -10830,7 +10920,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiGetStoryDungeonNodeRecord'
               packetId:
                 enum:
-                  - 26010000
+                  - 726087886272
                 type: integer
     request_api_EnterRailwayDungeon:
       content:
@@ -10844,7 +10934,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiEnterRailwayDungeon'
               packetId:
                 enum:
-                  - 13
+                  - 73
                 type: integer
     request_api_EnterRailwayDungeonNode:
       content:
@@ -10858,7 +10948,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiEnterRailwayDungeonNode'
               packetId:
                 enum:
-                  - 59353
+                  - 936
                 type: integer
     request_api_GetRailwayDungeonNodeAndLogAll:
       content:
@@ -10872,7 +10962,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiGetRailwayDungeonNodeAndLogAll'
               packetId:
                 enum:
-                  - 2577
+                  - 970274
                 type: integer
     request_api_ClaimEventReward:
       content:
@@ -10886,7 +10976,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiClaimEventReward'
               packetId:
                 enum:
-                  - 1849639
+                  - 4100625
                 type: integer
     request_api_ClaimEventReward_ALL:
       content:
@@ -10900,7 +10990,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiClaimEventReward_ALL'
               packetId:
                 enum:
-                  - 6682225
+                  - 254
                 type: integer
     request_api_ExitRailwayDungeonNode:
       content:
@@ -10914,7 +11004,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiExitRailwayDungeonNode'
               packetId:
                 enum:
-                  - 550
+                  - 375273412597
                 type: integer
     request_api_ExitRailwayDungeonRestNode:
       content:
@@ -10928,7 +11018,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiExitRailwayDungeonRestNode'
               packetId:
                 enum:
-                  - 19800
+                  - 129638
                 type: integer
     request_api_PlayGacha:
       content:
@@ -10942,7 +11032,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiPlayGacha'
               packetId:
                 enum:
-                  - 860
+                  - 81
                 type: integer
     request_log_GetGachaLogAll:
       content:
@@ -10970,7 +11060,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiUseGachaPityPoint'
               packetId:
                 enum:
-                  - 353
+                  - 287516
                 type: integer
     request_api_ClaimClosedGachaRewards:
       content:
@@ -10998,7 +11088,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiExitRailwayDungeon'
               packetId:
                 enum:
-                  - 2681
+                  - 3896
                 type: integer
     request_api_GiveUpRailwayDungeonNode:
       content:
@@ -11012,7 +11102,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiGiveUpRailwayDungeonNode'
               packetId:
                 enum:
-                  - 17172736
+                  - 376367122
                 type: integer
     request_api_GiveUpRailwayDungeonNodeInBattle:
       content:
@@ -11026,7 +11116,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiGiveUpRailwayDungeonNodeInBattle'
               packetId:
                 enum:
-                  - 166496
+                  - 807003
                 type: integer
     request_iap_Purchase:
       content:
@@ -11040,7 +11130,7 @@ components:
                 $ref: '#/components/schemas/RequestParamIapPurchase'
               packetId:
                 enum:
-                  - 46
+                  - 80864
                 type: integer
     request_iap_InitPurchase:
       content:
@@ -11054,7 +11144,7 @@ components:
                 $ref: '#/components/schemas/RequestParamIapInitPurchase'
               packetId:
                 enum:
-                  - 13528
+                  - 225
                 type: integer
     request_iap_InitPurchaseAsSteam:
       content:
@@ -11068,7 +11158,7 @@ components:
                 $ref: '#/components/schemas/RequestParamIapInitPurchaseAsSteam'
               packetId:
                 enum:
-                  - 701
+                  - 87
                 type: integer
     request_iap_FinalizePurchaseAsSteam:
       content:
@@ -11082,7 +11172,7 @@ components:
                 $ref: '#/components/schemas/RequestParamIapFinalizePurchaseAsSteam'
               packetId:
                 enum:
-                  - 45499314
+                  - 2752
                 type: integer
     request_iap_UpdateSteamPendingPurchase:
       content:
@@ -11110,7 +11200,7 @@ components:
                 $ref: '#/components/schemas/RequestParamIapGetSteamWalletCurrency'
               packetId:
                 enum:
-                  - 24897034
+                  - 5767
                 type: integer
     request_iap_PurchaseAsGoogle:
       content:
@@ -11124,7 +11214,7 @@ components:
                 $ref: '#/components/schemas/RequestParamIapPurchaseAsGoogle'
               packetId:
                 enum:
-                  - 45
+                  - 5202
                 type: integer
     request_iap_PurchaseAsApple:
       content:
@@ -11138,7 +11228,7 @@ components:
                 $ref: '#/components/schemas/RequestParamIapPurchaseAsApple'
               packetId:
                 enum:
-                  - 731432701
+                  - 1216
                 type: integer
     request_iap_PurchaseIngameProduct:
       content:
@@ -11152,7 +11242,7 @@ components:
                 $ref: '#/components/schemas/RequestParamIapPurchaseIngameProduct'
               packetId:
                 enum:
-                  - 774400
+                  - 72
                 type: integer
     request_api_UseItem:
       content:
@@ -11166,7 +11256,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiUseItem'
               packetId:
                 enum:
-                  - 2506
+                  - 5582
                 type: integer
     request_api_PurchaseEnkephalinModule:
       content:
@@ -11180,7 +11270,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiPurchaseEnkephalinModule'
               packetId:
                 enum:
-                  - 387309
+                  - 5927700
                 type: integer
     request_api_PurchaseEnkephalin:
       content:
@@ -11194,7 +11284,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiPurchaseEnkephalin'
               packetId:
                 enum:
-                  - 6264
+                  - 4340
                 type: integer
     request_api_PersonalityGacksung:
       content:
@@ -11208,7 +11298,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiPersonalityGacksung'
               packetId:
                 enum:
-                  - 1679
+                  - 108
                 type: integer
     request_api_SetPersonalityGacksungIllust:
       content:
@@ -11222,7 +11312,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiSetPersonalityGacksungIllust'
               packetId:
                 enum:
-                  - 138
+                  - 82
                 type: integer
     request_api_EgoGacksung:
       content:
@@ -11236,7 +11326,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiEgoGacksung'
               packetId:
                 enum:
-                  - 9449476
+                  - 94
                 type: integer
     request_api_UsePersonalityExpItem:
       content:
@@ -11250,7 +11340,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiUsePersonalityExpItem'
               packetId:
                 enum:
-                  - 1354
+                  - 314384
                 type: integer
     request_api_UseEgoGacksungItem:
       content:
@@ -11264,7 +11354,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiUseEgoGacksungItem'
               packetId:
                 enum:
-                  - 2809
+                  - 30118165
                 type: integer
     request_api_PersonalityGacksungWithItems:
       content:
@@ -11278,7 +11368,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiPersonalityGacksungWithItems'
               packetId:
                 enum:
-                  - 830587
+                  - 266
                 type: integer
     request_api_EgoGacksungWithItems:
       content:
@@ -11292,7 +11382,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiEgoGacksungWithItems'
               packetId:
                 enum:
-                  - 20938
+                  - 375769
                 type: integer
     request_api_LoadUserDataAll:
       content:
@@ -11348,7 +11438,7 @@ components:
                 $ref: '#/components/schemas/RequestParamLoginSignInAsGuest'
               packetId:
                 enum:
-                  - 135005697000
+                  - 211380
                 type: integer
     request_login_SignInAsNewGuest:
       content:
@@ -11362,7 +11452,7 @@ components:
                 $ref: '#/components/schemas/RequestParamLoginSignInAsNewGuest'
               packetId:
                 enum:
-                  - 983040
+                  - 4748
                 type: integer
     request_login_SignInAsGoogle:
       content:
@@ -11376,7 +11466,7 @@ components:
                 $ref: '#/components/schemas/RequestParamLoginSignInAsGoogle'
               packetId:
                 enum:
-                  - 6505
+                  - 3485
                 type: integer
     request_login_LinkWithGoogle:
       content:
@@ -11390,7 +11480,7 @@ components:
                 $ref: '#/components/schemas/RequestParamLoginLinkWithGoogle'
               packetId:
                 enum:
-                  - 8374
+                  - 5487
                 type: integer
     request_login_SignInAsApple:
       content:
@@ -11404,7 +11494,7 @@ components:
                 $ref: '#/components/schemas/RequestParamLoginSignInAsApple'
               packetId:
                 enum:
-                  - 3428
+                  - 65
                 type: integer
     request_login_LinkWithApple:
       content:
@@ -11418,7 +11508,7 @@ components:
                 $ref: '#/components/schemas/RequestParamLoginLinkWithApple'
               packetId:
                 enum:
-                  - 4123
+                  - 9241962
                 type: integer
     request_login_SignInAsSteam:
       content:
@@ -11432,7 +11522,7 @@ components:
                 $ref: '#/components/schemas/RequestParamLoginSignInAsSteam'
               packetId:
                 enum:
-                  - 1115136
+                  - 4954
                 type: integer
     request_login_RefreshLinkAuth:
       content:
@@ -11446,7 +11536,7 @@ components:
                 $ref: '#/components/schemas/RequestParamLoginRefreshLinkAuth'
               packetId:
                 enum:
-                  - 9363600
+                  - 7898
                 type: integer
     request_login_GetInfoOfLinkWith:
       content:
@@ -11460,7 +11550,7 @@ components:
                 $ref: '#/components/schemas/RequestParamLoginGetInfoOfLinkWith'
               packetId:
                 enum:
-                  - 441
+                  - 5046
                 type: integer
     request_login_LinkWithAnother:
       content:
@@ -11474,7 +11564,7 @@ components:
                 $ref: '#/components/schemas/RequestParamLoginLinkWithAnother'
               packetId:
                 enum:
-                  - 914
+                  - 2522
                 type: integer
     request_login_TryToSecede:
       content:
@@ -11544,7 +11634,7 @@ components:
                 $ref: '#/components/schemas/RequestParamLoginUnLinkWithAnother'
               packetId:
                 enum:
-                  - 314908
+                  - 1370
                 type: integer
     request_api_RefreshMailbox:
       content:
@@ -11572,7 +11662,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiUnsealMails'
               packetId:
                 enum:
-                  - 6780723
+                  - 158
                 type: integer
     request_log_GetMailLogAll:
       content:
@@ -11600,7 +11690,7 @@ components:
                 $ref: '#/components/schemas/RequestParamLogReportSpeedHack'
               packetId:
                 enum:
-                  - 1322550
+                  - 69016
                 type: integer
     request_log_ReportModifiedHash:
       content:
@@ -11614,7 +11704,7 @@ components:
                 $ref: '#/components/schemas/RequestParamLogReportModifiedHash'
               packetId:
                 enum:
-                  - 779
+                  - 63965
                 type: integer
     request_api_SaveMiniStoryWeek:
       content:
@@ -11628,7 +11718,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiSaveMiniStoryWeek'
               packetId:
                 enum:
-                  - 10496
+                  - 13107258
                 type: integer
     request_api_CompleteMinistory:
       content:
@@ -11642,7 +11732,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiCompleteMinistory'
               packetId:
                 enum:
-                  - 8580
+                  - 1579
                 type: integer
     request_api_EnterMirrorDungeon:
       content:
@@ -11656,7 +11746,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiEnterMirrorDungeon'
               packetId:
                 enum:
-                  - 1044
+                  - 9261000000
                 type: integer
     request_api_ReEnterMirrorDungeon:
       content:
@@ -11670,7 +11760,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiReEnterMirrorDungeon'
               packetId:
                 enum:
-                  - 17656804
+                  - 1040
                 type: integer
     request_api_UpdateMirrorDungeon:
       content:
@@ -11684,7 +11774,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiUpdateMirrorDungeon'
               packetId:
                 enum:
-                  - 877
+                  - 620214013952
                 type: integer
     request_api_SelectFormationMirrorDungeon:
       content:
@@ -11698,7 +11788,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiSelectFormationMirrorDungeon'
               packetId:
                 enum:
-                  - 2394
+                  - 116
                 type: integer
     request_api_RecreateThemeFloorPoolMirrorDungeon:
       content:
@@ -11726,7 +11816,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiSelectThemeFloorMirrorDungeon'
               packetId:
                 enum:
-                  - 26244
+                  - 83
                 type: integer
     request_api_ExitMirrorDungeon:
       content:
@@ -11754,7 +11844,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiEnterMirrorDungeonMapNode'
               packetId:
                 enum:
-                  - 435
+                  - 6120
                 type: integer
     request_api_UpdateMirrorDungeonMapNode:
       content:
@@ -11768,7 +11858,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiUpdateMirrorDungeonMapNode'
               packetId:
                 enum:
-                  - 0
+                  - 145513
                 type: integer
     request_api_EnterMirrordungeonMapNodeBattleAfterChoice:
       content:
@@ -11782,7 +11872,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiEnterMirrordungeonMapNodeBattleAfterChoice'
               packetId:
                 enum:
-                  - 4639
+                  - 2067
                 type: integer
     request_api_ExitMirrorDungeonMapNode:
       content:
@@ -11796,7 +11886,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiExitMirrorDungeonMapNode'
               packetId:
                 enum:
-                  - 1162056
+                  - 3216
                 type: integer
     request_api_UpdateMirrorDungeonUnits:
       content:
@@ -11810,7 +11900,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiUpdateMirrorDungeonUnits'
               packetId:
                 enum:
-                  - 0
+                  - 900
                 type: integer
     request_api_AcquireRewardEgoGiftsMirrorDungeon:
       content:
@@ -11824,7 +11914,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiAcquireRewardEgoGiftsMirrorDungeon'
               packetId:
                 enum:
-                  - 6943319
+                  - 9466
                 type: integer
     request_api_AcquireRewardEgoGiftsWithEnemyBufMirrorDungeon:
       content:
@@ -11838,7 +11928,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiAcquireRewardEgoGiftsWithEnemyBufMirrorDungeon'
               packetId:
                 enum:
-                  - 2540
+                  - 1088
                 type: integer
     request_api_RejectRewardEgoGiftsMirrorDungeon:
       content:
@@ -11880,7 +11970,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiAcquireMirrorDungeonBattleReward'
               packetId:
                 enum:
-                  - 6060
+                  - 493
                 type: integer
     request_api_GetMirrorDungeonEgoGiftRecord:
       content:
@@ -11908,7 +11998,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiSendMirrorDungeonLogError'
               packetId:
                 enum:
-                  - 476100
+                  - 9966649
                 type: integer
     request_api_SendMirrorDungeonShopExit:
       content:
@@ -11936,7 +12026,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiPurchaseHealMirrorDungeon'
               packetId:
                 enum:
-                  - 657072
+                  - 1756420
                 type: integer
     request_api_PurchaseFormationMirrorDungeon:
       content:
@@ -11950,7 +12040,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiPurchaseFormationMirrorDungeon'
               packetId:
                 enum:
-                  - 8428
+                  - 85377600
                 type: integer
     request_api_PurchaseUpgradePersonalityMirrorDungeon:
       content:
@@ -11964,7 +12054,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiPurchaseUpgradePersonalityMirrorDungeon'
               packetId:
                 enum:
-                  - 33
+                  - 7984
                 type: integer
     request_api_PurchaseEgoGiftMirrorDungeon:
       content:
@@ -11978,7 +12068,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiPurchaseEgoGiftMirrorDungeon'
               packetId:
                 enum:
-                  - 258
+                  - 793
                 type: integer
     request_api_SellEgoGiftMirrorDungeon:
       content:
@@ -11992,7 +12082,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiSellEgoGiftMirrorDungeon'
               packetId:
                 enum:
-                  - 423
+                  - 677
                 type: integer
     request_api_RefreshShopEgoGiftsMirrorDungeon:
       content:
@@ -12006,7 +12096,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRefreshShopEgoGiftsMirrorDungeon'
               packetId:
                 enum:
-                  - 12684
+                  - 6614
                 type: integer
     request_api_GetStartBuffFInfoMirrorDungeon:
       content:
@@ -12020,7 +12110,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiGetStartBuffFInfoMirrorDungeon'
               packetId:
                 enum:
-                  - 1003
+                  - 140553
                 type: integer
     request_api_PurchaseStartBuffMirrorDungeon:
       content:
@@ -12034,7 +12124,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiPurchaseStartBuffMirrorDungeon'
               packetId:
                 enum:
-                  - 29808
+                  - 62
                 type: integer
     request_api_EnableSpecialStartBuffMirrorDungeon:
       content:
@@ -12048,7 +12138,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiEnableSpecialStartBuffMirrorDungeon'
               packetId:
                 enum:
-                  - 31464
+                  - 6846
                 type: integer
     request_api_EnableStartBuffMirrorDungeon:
       content:
@@ -12062,7 +12152,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiEnableStartBuffMirrorDungeon'
               packetId:
                 enum:
-                  - 72462
+                  - 48
                 type: integer
     request_api_RemoveMirrorDungeonEgoGift:
       content:
@@ -12076,7 +12166,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRemoveMirrorDungeonEgoGift'
               packetId:
                 enum:
-                  - 5872
+                  - 17159573
                 type: integer
     request_api_AcquireStartEgoGiftsAndCreateThemePoolMirrorDungeon:
       content:
@@ -12090,7 +12180,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiAcquireStartEgoGiftsAndCreateThemePoolMirrorDungeon'
               packetId:
                 enum:
-                  - 944
+                  - 6100900
                 type: integer
     request_api_RefreshStartEgoGiftsMirrorDungeon:
       content:
@@ -12104,7 +12194,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRefreshStartEgoGiftsMirrorDungeon'
               packetId:
                 enum:
-                  - 151
+                  - 13884
                 type: integer
     request_api_UpgradeEgoGiftMirrorDungeon:
       content:
@@ -12118,7 +12208,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiUpgradeEgoGiftMirrorDungeon'
               packetId:
                 enum:
-                  - 7585
+                  - 47
                 type: integer
     request_api_CombineEgoGiftMirrorDungeon:
       content:
@@ -12132,7 +12222,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiCombineEgoGiftMirrorDungeon'
               packetId:
                 enum:
-                  - 9801
+                  - 1513
                 type: integer
     request_api_PreviewMirrorDungeonExitReward:
       content:
@@ -12160,7 +12250,21 @@ components:
                 $ref: '#/components/schemas/RequestParamApiAcquireMirrorDungeonExitReward'
               packetId:
                 enum:
-                  - 2148485
+                  - 546
+                type: integer
+    request_api_EnterInfiniteMode:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              userAuth:
+                $ref: '#/components/schemas/UserAuth'
+              parameters:
+                $ref: '#/components/schemas/RequestParamApiEnterInfiniteMode'
+              packetId:
+                enum:
+                  - 34199104
                 type: integer
     request_api_AcquireMissionRewards:
       content:
@@ -12174,7 +12278,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiAcquireMissionRewards'
               packetId:
                 enum:
-                  - 2264
+                  - 12935936
                 type: integer
     request_api_ReportError:
       content:
@@ -12188,7 +12292,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiReportError'
               packetId:
                 enum:
-                  - 34038816
+                  - 133
                 type: integer
     request_api_SelectRailwayDungeonBuff:
       content:
@@ -12202,7 +12306,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiSelectRailwayDungeonBuff'
               packetId:
                 enum:
-                  - 16665390
+                  - 2758
                 type: integer
     request_api_FetchLatestSynchronousData:
       content:
@@ -12230,7 +12334,7 @@ components:
                 $ref: '#/components/schemas/RequestParamLoginGetTermsOfUseStateAll'
               packetId:
                 enum:
-                  - 0
+                  - 8523
                 type: integer
     request_login_UpdateTermsOfUseState:
       content:
@@ -12244,7 +12348,7 @@ components:
                 $ref: '#/components/schemas/RequestParamLoginUpdateTermsOfUseState'
               packetId:
                 enum:
-                  - 2359502
+                  - 1239
                 type: integer
     request_api_GetTheaterInfo:
       content:
@@ -12272,7 +12376,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiCompleteTheaterStory'
               packetId:
                 enum:
-                  - 2232
+                  - 23547446
                 type: integer
     request_api_UpdateFormation:
       content:
@@ -12286,7 +12390,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiUpdateFormation'
               packetId:
                 enum:
-                  - 6
+                  - 7224
                 type: integer
     request_api_UpdateLobbyCg:
       content:
@@ -12300,7 +12404,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiUpdateLobbyCg'
               packetId:
                 enum:
-                  - 59
+                  - 6171
                 type: integer
     request_api_GetUserBanners:
       content:
@@ -12342,7 +12446,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiFindFriend'
               packetId:
                 enum:
-                  - 1172
+                  - 10582009
                 type: integer
     request_api_GetRecommendFriends:
       content:
@@ -12370,7 +12474,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiSendFriendRequest'
               packetId:
                 enum:
-                  - 6591796785
+                  - 12369289
                 type: integer
     request_api_AcceptReceivedFriendRequest:
       content:
@@ -12384,7 +12488,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiAcceptReceivedFriendRequest'
               packetId:
                 enum:
-                  - 4130
+                  - 3414107
                 type: integer
     request_api_RejectReceivedFriendRequest:
       content:
@@ -12398,7 +12502,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRejectReceivedFriendRequest'
               packetId:
                 enum:
-                  - 1820
+                  - 348
                 type: integer
     request_api_CancelSentFriendRequest:
       content:
@@ -12412,7 +12516,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiCancelSentFriendRequest'
               packetId:
                 enum:
-                  - 528
+                  - 5634
                 type: integer
     request_api_DeleteFriend:
       content:
@@ -12426,7 +12530,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiDeleteFriend'
               packetId:
                 enum:
-                  - 470112
+                  - 135098
                 type: integer
     request_api_GetFriendSupportPersonalities:
       content:
@@ -12440,7 +12544,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiGetFriendSupportPersonalities'
               packetId:
                 enum:
-                  - 540
+                  - 12326391
                 type: integer
     request_api_GetFriendSupportPersonalitiesByCharacterId:
       content:
@@ -12454,7 +12558,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiGetFriendSupportPersonalitiesByCharacterId'
               packetId:
                 enum:
-                  - 784
+                  - 8239
                 type: integer
     request_api_UpdateUserProfile:
       content:
@@ -12468,7 +12572,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiUpdateUserProfile'
               packetId:
                 enum:
-                  - 86
+                  - 152
                 type: integer
     request_api_GetProfileTicketDecoDatas:
       content:
@@ -12496,7 +12600,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiUpdateProfileTicketDeco'
               packetId:
                 enum:
-                  - 6331625
+                  - 1602
                 type: integer
     request_api_PlayVendingMachine:
       content:
@@ -12510,7 +12614,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiPlayVendingMachine'
               packetId:
                 enum:
-                  - 553525
+                  - 2210
                 type: integer
     request_api_ExchangeTwine:
       content:
@@ -12524,7 +12628,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiExchangeTwine'
               packetId:
                 enum:
-                  - 0
+                  - 26494289
                 type: integer
     request_api_EnterStoryMirrorDungeon:
       content:
@@ -12538,7 +12642,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiEnterStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 1201
+                  - 290
                 type: integer
     request_api_ReEnterStoryMirrorDungeon:
       content:
@@ -12552,7 +12656,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiReEnterStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 743
+                  - 59213025
                 type: integer
     request_api_UpdateStoryMirrorDungeon:
       content:
@@ -12566,7 +12670,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiUpdateStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 218
+                  - 6476
                 type: integer
     request_api_ExitStoryMirrorDungeon:
       content:
@@ -12594,7 +12698,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiEnterStoryMirrorDungeonMapNode'
               packetId:
                 enum:
-                  - 53
+                  - 1118
                 type: integer
     request_api_UpdateStoryMirrorDungeonMapNode:
       content:
@@ -12608,7 +12712,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiUpdateStoryMirrorDungeonMapNode'
               packetId:
                 enum:
-                  - 9825875
+                  - 84
                 type: integer
     request_api_EnterStoryMirrorDungeonMapNodeBattleAfterChoice:
       content:
@@ -12622,7 +12726,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiEnterStoryMirrorDungeonMapNodeBattleAfterChoice'
               packetId:
                 enum:
-                  - 159
+                  - 19321
                 type: integer
     request_api_ExitStoryMirrorDungeonMapNode:
       content:
@@ -12636,7 +12740,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiExitStoryMirrorDungeonMapNode'
               packetId:
                 enum:
-                  - 12797239
+                  - 4912
                 type: integer
     request_api_UpdateStoryMirrorDungeonUnits:
       content:
@@ -12650,7 +12754,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiUpdateStoryMirrorDungeonUnits'
               packetId:
                 enum:
-                  - 338608872936
+                  - 391
                 type: integer
     request_api_AcquireRewardEgoGiftsStoryMirrorDungeon:
       content:
@@ -12664,7 +12768,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiAcquireRewardEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 1551
+                  - 3805
                 type: integer
     request_api_RejectRewardEgoGiftsStoryMirrorDungeon:
       content:
@@ -12692,7 +12796,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiPurchaseHealStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 2664
+                  - 2100
                 type: integer
     request_api_PurchaseFormationStoryMirrorDungeon:
       content:
@@ -12706,7 +12810,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiPurchaseFormationStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 1989
+                  - 1072
                 type: integer
     request_api_PurchaseUpgradePersonalityStoryMirrorDungeon:
       content:
@@ -12720,7 +12824,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiPurchaseUpgradePersonalityStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 126
+                  - 3391
                 type: integer
     request_api_PurchaseEgoGiftStoryMirrorDungeon:
       content:
@@ -12734,7 +12838,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiPurchaseEgoGiftStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 3080
+                  - 64000
                 type: integer
     request_api_SellEgoGiftStoryMirrorDungeon:
       content:
@@ -12748,7 +12852,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiSellEgoGiftStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 2140369
+                  - 978
                 type: integer
     request_api_AcquireStartEgoGiftsStoryMirrorDungeon:
       content:
@@ -12762,7 +12866,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiAcquireStartEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 186169411
+                  - 100
                 type: integer
     request_api_UpgradeEgoGiftStoryMirrorDungeon:
       content:
@@ -12776,7 +12880,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiUpgradeEgoGiftStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 27000783
+                  - 22
                 type: integer
     request_api_CombineEgoGiftStoryMirrorDungeon:
       content:
@@ -12790,7 +12894,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiCombineEgoGiftStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 4928031
+                  - 11609
                 type: integer
     request_api_RefreshStartEgoGiftsStoryMirrorDungeon:
       content:
@@ -12804,7 +12908,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRefreshStartEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 2169
+                  - 5750
                 type: integer
     request_api_RefreshShopEgoGiftsStoryMirrorDungeon:
       content:
@@ -12818,7 +12922,7 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRefreshShopEgoGiftsStoryMirrorDungeon'
               packetId:
                 enum:
-                  - 3771
+                  - 4851
                 type: integer
     request_api_RemoveStoryMirrorDungeonEgoGift:
       content:
@@ -12832,5 +12936,5 @@ components:
                 $ref: '#/components/schemas/RequestParamApiRemoveStoryMirrorDungeonEgoGift'
               packetId:
                 enum:
-                  - 15
+                  - 1833316
                 type: integer
